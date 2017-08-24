@@ -1,0 +1,90 @@
+apply from: "$project.rootDir/tools/script-git-version.gradle"
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
+    defaultConfig {
+        applicationId "eu.spaj.fajkatool"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        release {
+
+        }
+        debug {
+
+        }
+    }
+    flavorDimensions version
+
+    productFlavors {
+        dev {
+            signingConfig signingConfigs.debug
+            versionCode gitVersionCodeTime
+            versionName gitVersionName + '.' + gitVersionCodeTime
+            applicationId 'eu.spaj.fajkatool'
+            dimension version
+        }
+        prod {
+            signingConfig signingConfigs.release
+            versionCode gitVersionCode
+            versionName gitVersionName
+            applicationId "eu.spaj.fajkatool"
+            dimension version
+        }
+    }
+    buildTypes {
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'C:/androidWorkspace/fajkatool/tools/rules-proguard.pro'
+            signingConfig signingConfigs.release
+            debuggable false
+            jniDebuggable false
+            renderscriptDebuggable false
+            proguardFile 'C:/androidWorkspace/Watcon/tools/rules-proguard.pro'
+            zipAlignEnabled true
+        }
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'C:/androidWorkspace/fajkatool/tools/rules-proguard-debug.pro'
+            signingConfig signingConfigs.debug
+            debuggable true
+            proguardFile 'C:/androidWorkspace/Watcon/tools/rules-proguard-debug.pro'
+            versionNameSuffix '-debug'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:26.0.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.google.firebase:firebase-messaging:11.2.0'
+    compile 'com.google.firebase:firebase-auth:11.2.0'
+    compile 'com.google.firebase:firebase-database:11.2.0'
+    implementation 'com.android.support:design:26.0.1'
+    compile "org.jetbrains.anko:anko:0.10.1"
+    compile "org.jetbrains.anko:anko-coroutines:0.10.1"
+    compile 'com.squareup.okhttp3:okhttp:3.8.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.0'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.0'
+}
+
+
+apply plugin: 'com.google.gms.google-services'

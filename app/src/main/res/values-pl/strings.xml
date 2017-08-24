@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">fajkatool</string>
+  <string name="title_activity_login">Zaloguj się</string>
+  <string name="action_sign_in">Przejdź dalej!</string>
+  <string name="prompt_name">Imię</string>
+  <string name="error_field_required">Błąd, wypełnij imie!</string>
+  <string name="hello_string">"Witaj, "</string>
+  <string name="prompt_group">Grupa</string>
+  <string name="channel_name">Kanał faja!</string>
+  <string name="ide_na_faja">Ide na faja!</string>
+  <string name="cig_msg_1">Idziesz na faje?</string>
+  <string name="cig_msg_2">Wychodzisz na ćmika?</string>
+  <string name="cig_msg_3">Chodź zajarać!</string>
+</resources>

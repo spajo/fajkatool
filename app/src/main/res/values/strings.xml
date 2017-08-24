@@ -1,0 +1,22 @@
+<resources>
+  <string name="app_name">fajkatool</string>
+  <string name="title_activity_login">Sign in</string>
+
+  <!-- Strings related to login -->
+  <string name="prompt_name">Name</string>
+  <string name="action_sign_in">Go in!</string>
+  <string name="prefs" translatable="false">eu.spaj.fajkatool.PREFERENCE_FILE_KEY</string>
+  <string name="signum" translatable="false">signum</string>
+  <string name="error_field_required">Error, please input your name</string>
+  <string name="hello_string">Hello,</string>
+  <string name="group" translatable="false">group</string>
+  <string name="prompt_group">Group</string>
+  <string name="fcm_token" translatable="false">FCM_TOKEN</string>
+  <string name="channel_name">Cig channel!</string>
+  <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+  <string name="default_notification_channel_name" translatable="false">Fajki</string>
+  <string name="ide_na_faja">I\'m going for a cig!</string>
+  <string name="cig_msg_1">Going for a smoke?</string>
+  <string name="cig_msg_3">Come for a cig!</string>
+  <string name="cig_msg_2">Want to smoke?</string>
+</resources>
